@@ -61,6 +61,7 @@ function addTransaction(source, amount){
 form.addEventListener("submit", e => {
   e.preventDefault();
   addTransaction(form.source.value, Number(form.amount.value));
+  updateStatistics();
   form.reset();
 });
 
@@ -87,7 +88,7 @@ incomeList.addEventListener("click", event => {
   if(event.target.classList.contains("delete")){
       event.target.parentElement.remove();
       deleteTransaction(Number(event.target.parentElement.dataset.id));
-      // updateStatistics();
+      updateStatistics();
   }
 });
 
@@ -95,6 +96,6 @@ expenseList.addEventListener("click", event => {
   if(event.target.classList.contains("delete")){
       event.target.parentElement.remove();
       deleteTransaction(Number(event.target.parentElement.dataset.id));
-      // updateStatistics();
+      updateStatistics();
   }
 });
