@@ -26,3 +26,21 @@
   max-width: 1200px;
   margin: auto;
 }
+
+.heading {
+  margin: 10px auto 40px auto;
+}
+
+.heading .title{
+  font-size: 30px;
+  color: #000000;
+  font-weight: 500;
+  text-align: center;
+}
+
+.heading .subtitle{
+  font-size: 20px;
+  color: #000000;
+  font-weight: 300;
+  text-align: center;
+}
