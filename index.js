@@ -38,7 +38,7 @@ function addTransaction(source, amount){
 
 form.addEventListener("submit", e => {
   e.preventDefault();
-  addTransaction(form.source.value, form.amount.value);
+  addTransaction(form.source.value, Number(form.amount.value));
   form.reset();
 });
 
@@ -53,3 +53,26 @@ function getTransaction(){
 }
 
 getTransaction()
+
+function deleteTransaction(id){
+  transactions = transactions.filter(transaction => {
+      return transaction.id !== id;
+  });
+  localStorage.setItem("transactions", JSON.stringify(transactions));
+}
+
+incomeList.addEventListener("click", event => {
+  if(event.target.classList.contains("delete")){
+      event.target.parentElement.remove();
+      deleteTransaction(Number(event.target.parentElement.dataset.id));
+      // updateStatistics();
+  }
+});
+
+expenseList.addEventListener("click", event => {
+  if(event.target.classList.contains("delete")){
+      event.target.parentElement.remove();
+      deleteTransaction(Number(event.target.parentElement.dataset.id));
+      // updateStatistics();
+  }
+});
