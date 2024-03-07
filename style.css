@@ -35,7 +35,8 @@ h3{
 }
 
 .heading {
-  margin: 10px auto 40px auto;
+  margin: 30px auto;
+  padding: 0px 20px;
 }
 
 .heading .title{
@@ -116,6 +117,11 @@ h3{
   border-right: 10px solid #EB596E;
 }
 
+.stats p span{
+  font-size: 18px;
+}
+
+
 .transaction-history{
   margin: 40px 10px;
   background-color: #FFFFFF;
@@ -132,3 +138,52 @@ h3{
   margin: 20px;
 }
 
+.records div{
+  flex-grow: 1;
+  padding: 10px;
+}
+
+.records li{
+  display: flex;
+  justify-content: space-between;
+  background-color: #FFFFFF;
+  padding: 10px;
+  margin: 12px 0px;
+  min-width: 250px;
+  box-shadow: var(--box-shadow);
+  font-size: 18px;
+}
+
+.records .income li{
+  border-left: 10px solid #2ECC71;
+}
+
+.records .expense li{
+  border-left: 10px solid #DF5E5E;
+}
+
+.records li p:first-child{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.records span{
+  font-size: 18px;
+}
+
+.records span#time{
+  color: #717171;
+  font-size: 12px;
+}
+
+.records i.bi-trash {
+  margin-left: 15px;
+  color: #082032;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.records i.bi-trash:hover {
+  color: #B42B51;
+}
