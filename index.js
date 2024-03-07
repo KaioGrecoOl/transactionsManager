@@ -3,6 +3,28 @@ let transactions = localStorage.getItem("transactions") !== null ? JSON.parse(lo
 const incomeList = document.querySelector("ul.income-list");
 const expenseList = document.querySelector("ul.expense-list");
 
+const balance = document.getElementById("balance");
+const income = document.getElementById("income");
+const expense = document.getElementById("expense");
+
+function updateStatistics(){
+  const updatedIncome = transactions
+                          .filter(transaction => transaction.amount > 0)
+                          .reduce((total, transaction) => total += transaction.amount, 0);
+
+  const updatedExpense = transactions
+                          .filter(transaction => transaction.amount < 0)
+                          .reduce((total, transaction) => total += Math.abs(transaction.amount), 0);
+
+  updatedBalance = updatedIncome - updatedExpense;
+  balance.textContent = updatedBalance;
+  income.textContent = updatedIncome;
+  expense.textContent = updatedExpense;
+  
+}
+
+updateStatistics()
+
 function generateTemplate(id, source, amount, time){
   return `<li data-id="${id}">
               <p>
