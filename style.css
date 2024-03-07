@@ -15,6 +15,13 @@
     list-style: none;
 }
 
+h3{
+  text-align: center;
+  margin-bottom: 15px;
+  text-decoration: underline solid #393E46 3px;
+  font-size: 24px;
+}
+
 .outer-wrap{
   width: 100%;
   min-height: 100vh;
@@ -43,4 +50,21 @@
   color: #000000;
   font-weight: 300;
   text-align: center;
+}
+
+.transaction-control{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 30px auto;
+}
+
+.actions, .statistics{
+  flex-grow: 1;
+  background-color: #FFFFFF;
+  padding: 20px;
+  box-shadow: var(--box-shadow);
+  border-radius: 5px;
+  margin: 0px 10px;
 }
