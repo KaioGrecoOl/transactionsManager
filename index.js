@@ -58,7 +58,10 @@ function addTransaction(source, amount){
 
 form.addEventListener("submit", e => {
   e.preventDefault();
-  addTransaction(form.source.value, Number(form.amount.value));
+  if(form.source.value.trim() === "" || form.amount.value.trim() === ""){
+    return alert("Please provide source and amount");
+  }
+  addTransaction(form.source.value.trim(), Number(form.amount.value));
   updateStatistics();
   form.reset();
 });
