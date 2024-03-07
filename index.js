@@ -23,8 +23,6 @@ function updateStatistics(){
   
 }
 
-updateStatistics()
-
 function generateTemplate(id, source, amount, time){
   return `<li data-id="${id}">
               <p>
@@ -99,3 +97,10 @@ expenseList.addEventListener("click", event => {
       updateStatistics();
   }
 });
+
+function init(){
+  updateStatistics();
+  getTransaction();
+}
+
+init()
